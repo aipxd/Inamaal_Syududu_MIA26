@@ -82,7 +82,7 @@ export const Dashboard = () => {
     <section>
       <Header />
 
-      <div className="py-4 pb-8">
+      <div className="py-4 pb-8 flex justify-center items-center">
         <DropdownContainer
           wilayah={wilayah}
           setWilayah={setWilayah}

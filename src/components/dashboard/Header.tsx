@@ -10,17 +10,17 @@ const Header = ({ onOpenGuide: _onOpenGuide }: HeaderProps) => {
     <header className="flex justify-between px-5 py-3">
       <div>
         <div className="flex gap-1 items-center">
-          <h1 className="text-xl font-bold text-white">
+          <h1 className="text-xl font-bold text-white lg:text-3xl">
             Cek
             <span className="text-brand-yellow">Pangan</span>
           </h1>
-          <Icon icon="codicon:verified" className="text-2xl text-white" />
+          <Icon icon="codicon:verified" className="text-2xl text-white lg:text-4xl" />
         </div>
-        <p className="text-xs text-white mt-1">Sumber: Data resmi Bapanas</p>
+        <p className="text-xs text-white mt-1 lg:text-sm">Sumber: Data resmi Bapanas</p>
       </div>
       <div className="flex items-center">
         <Link to="/g"></Link>
-        <Icon icon="akar-icons:question" className="text-3xl text-white"/>
+        <Icon icon="akar-icons:question" className="text-3xl text-white lg:text-4xl"/>
       </div>
     </header>
   )

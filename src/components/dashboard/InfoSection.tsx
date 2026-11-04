@@ -168,47 +168,51 @@ export const InfoSection = ({
     pricesForSelectedMonth.length > 0 ? Math.max(...pricesForSelectedMonth) : 0;
 
   return (
-    <div className="bg-brand-bg rounded-t-2xl p-4 min-h-screen flex flex-col justify-center items-center gap-5 pt-10 pb-25">
-      {/* Kartu Rata-Rata Harga */}
-      <CardRata2Harga
-        bulan={selectedBulan}
-        harga={formatRupiah(hargaRataRataBulanTerpilih)}
-        satuan={satuan}
-        persentase={displayPersentase}
-        status={status}
-      />
-
-      {/* Kontainer Rekomendasi */}
-      <div className="bg-white rounded-2xl shadow-lg w-full">
-        <RecommendCard
-          komoditas={selectedKomoditas}
-          bulanTermurah={bulanTermurah}
-          bulanTermahal={bulanTermahal}
-          selisihPersen={displaySelisih}
-        />
-        <div className="flex flex-row justify-around items-center p-3 gap-2">
-          <TermurahMahalCard
-            type="termurah"
-            harga={formatRupiah(minHargaBulan)}
-            satuan={satuan}
-          />
-          <TermurahMahalCard
-            type="termahal"
-            harga={formatRupiah(maxHargaBulan)}
-            satuan={satuan}
-          />
-        </div>
-        <SaranPangi
-          komoditas={selectedKomoditas}
-          bulanTermurah={bulanTermurah}
-          bulanTermahal={bulanTermahal}
-          selectedBulan={selectedBulan}
+    <div className="mx-auto bg-brand-bg rounded-t-2xl p-4 min-h-screen flex flex-col justify-center items-center gap-5 pt-10 pb-25 lg:gap-10 lg:rounded-4xl">
+      
+      <div className="w-full flex flex-col lg:flex-row lg:flex-wrap lg:px-35 lg:gap-10 gap-5 justify-center max-w-[2000px]">
+        {/* Kartu Rata-Rata Harga */}
+        <CardRata2Harga
+          bulan={selectedBulan}
+          harga={formatRupiah(hargaRataRataBulanTerpilih)}
+          satuan={satuan}
+          persentase={displayPersentase}
           status={status}
-        />
+          />
+
+        {/* Kontainer Rekomendasi */}
+        <div className="bg-white rounded-2xl shadow-lg w-full lg:w-3xl flex-1">
+          <RecommendCard
+            komoditas={selectedKomoditas}
+            bulanTermurah={bulanTermurah}
+            bulanTermahal={bulanTermahal}
+            selisihPersen={displaySelisih}
+            />
+          <div className="flex flex-row justify-center items-center p-5 gap-2">
+            <TermurahMahalCard
+              type="termurah"
+              harga={formatRupiah(minHargaBulan)}
+              satuan={satuan}
+              />
+            <TermurahMahalCard
+              type="termahal"
+              harga={formatRupiah(maxHargaBulan)}
+              satuan={satuan}
+              />
+          </div>
+          <SaranPangi
+            komoditas={selectedKomoditas}
+            bulanTermurah={bulanTermurah}
+            bulanTermahal={bulanTermahal}
+            selectedBulan={selectedBulan}
+            status={status}
+            />
+        </div>
       </div>
 
       {/* Grafik Pola Harga 12 Bulan */}
-      <PolaHargaChart data={chartData} />
+      <PolaHargaChart 
+      data={chartData} />
       <InfoSumber />
     </div>
   );

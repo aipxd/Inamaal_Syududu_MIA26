@@ -14,7 +14,7 @@ export const RecommendCard = ({
   selisihPersen = "0%", // Default fallback
 }: RecommendCardProps) => {
   return (
-    <div className="relative overflow-hidden rounded-t-2xl bg-[#158d4d] p-5 text-white min-h-[160px] flex flex-col justify-between">
+    <div className="relative overflow-hidden rounded-t-2xl bg-[#158d4d] p-5 text-white min-h-[160px] flex flex-col justify-between flex-1 lg:p-10">
       {/* SVG & WAVE BACKGROUND TIDAK DIUBAH SAMA SEKALI */}
       <svg
         className="absolute inset-0 h-full w-full object-cover pointer-events-none"
@@ -49,18 +49,18 @@ export const RecommendCard = ({
       />
 
       {/* KONTEN UTAMA */}
-      <div className="relative z-10 space-y-1">
-        <div className="flex justify-center gap">
+      <div className="relative">
+        <div className="flex justify-center">
             <div>
-                <span className="bg-white text-brand-primary px-4 py-1 rounded-2xl text-xs font-semibold">
+                <span className="bg-white text-brand-primary px-4 py-1 rounded-2xl text-xs font-semibold lg:text-lg">
                   Rekomendasi Waktu Belanja
                 </span>
-                <h2 className="text-xl font-bold mt-3 text-shadow-lg/10">
+                <h2 className="text-xl font-bold mt-3 text-shadow-lg/10 lg:text-4xl">
                     {komoditas} biasanya 
                     <span className="underline text-[#b3ff00]"> paling murah </span> 
                     di bulan {bulanTermurah}
                 </h2>
-                <p className="text-sm font-medium text-shadow-lg/5 max-w-80">Bulan termahal biasanya di bulan {bulanTermahal} (selisih 
+                <p className="text-sm font-medium text-shadow-lg/5 max-w-80 lg:text-lg lg:max-w-none lg:mt-4">Bulan termahal biasanya di bulan {bulanTermahal} (selisih 
                     <span className="text-brand-yellow"> {selisihPersen} </span>).
                 </p>
             </div>

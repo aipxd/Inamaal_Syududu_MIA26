@@ -18,13 +18,13 @@ export const CardRata2Harga = ({
     const isTurun = status === "Turun";
 
   return (
-    <div className="bg-white p-5 rounded-2xl shadow-lg border border-black/15">
+    <div className="bg-white p-5 rounded-2xl shadow-lg border border-black/15 flex- lg:p-10">
         <div className="text-sm flex justify-between items-center">
-            <h3 className="font-medium text-brand-gray">Harga rata-rata bulan {bulan}</h3>
+            <h3 className="font-medium text-brand-gray lg:text-lg">Harga rata-rata bulan {bulan}</h3>
             
             {/* Indikator harga */}
             <div 
-                className={`text-xs border p-2 rounded-full flex justify-center items-center gap-2 ${
+                className={`text-xs border p-2 rounded-full flex justify-center items-center gap-2 lg:text-base ${
                 isTurun
                     ? "bg-brand-icon/20 text-brand-icon border-brand-icon/20" 
                     : status === "Naik"
@@ -48,14 +48,14 @@ export const CardRata2Harga = ({
         </div>
         
         {/* Tampilan harga & satuan dinamis */}
-        <div className="flex items-center justify-start gap-2 my-3">
-            <p className="font-semibold text-3xl">{harga}</p> 
-            <p className="text-brand-gray">{satuan}</p>
+        <div className="flex items-end justify-start gap-2 my-3">
+            <p className="font-semibold text-3xl lg:text-5xl">{harga}</p> 
+            <p className="text-brand-gray lg:text-xl">{satuan}</p>
         </div>
 
         {/* Footer info bapanas */}
-        <div className="flex gap-1 text-xs justify-center items-center text-brand-gray pt-1">
-            <Icon icon="ant-design:info-circle-outlined" className="text-lg shrink-0 mt-0.5" />
+        <div className="flex gap-1 text-xs justify-center items-center text-brand-gray pt-1 lg:text-lg lg:max-w-lg lg:gap-4 lg:max-w-xl lg:mt-8">
+            <Icon icon="ant-design:info-circle-outlined" className="text-lg shrink-0 mt-0.5 lg:text-2xl" />
             <p>
                 Data Januari 2021-2026. Data ini bersumber dari Badan Pangan Nasional yang telah diolah oleh tim internal kami.
             </p>

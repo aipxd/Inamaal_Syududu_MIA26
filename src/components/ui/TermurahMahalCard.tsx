@@ -15,7 +15,7 @@ export const TermurahMahalCard = ({
 
   return (
     <div
-      className={`flex-1 p-3 rounded-2xl flex justify-center items-center gap-3 text-white ${
+      className={`flex-1 p-2 rounded-xl flex justify-center items-center gap-3 text-white ${
         isTermahal
           ? "bg-linear-to-r from-[#FF5900] to-brand-negative"
           : "bg-linear-to-r from-[#41B573] to-[#68CC4F]"
@@ -25,23 +25,23 @@ export const TermurahMahalCard = ({
         <Icon
           icon="andrsrxn:trend-up"
           fontWeight={100}
-          className="bg-white p-1 rounded-md text-brand-negative text-3xl shrink-0"
+          className="bg-white p-1 rounded-md text-brand-negative text-3xl shrink-0 lg:text-4xl"
         />
       ) : (
         <Icon
           icon="andrsrxn:trend-down"
           fontWeight={100}
-          className="bg-white p-1 rounded-md text-brand-primary text-3xl shrink-0"
+          className="bg-white p-1 rounded-md text-brand-primary text-3xl shrink-0 lg:text-4xl"
         />
       )}
 
       <div>
-        <p className="text-xs">
+        <p className="text-tiny lg:text-base">
           {isTermahal ? "Harga Termahal" : "Harga Termurah"}
         </p>
-        <p className="text-sm font-bold">
+        <p className="text-sm font-bold lg:text-2xl">
           {harga}
-          <span className="text-xs font-normal opacity-80">/{satuan}</span>
+          <span className="text-tiny font-normal opacity-80 lg:text-sm">{satuan}</span>
         </p>
       </div>
     </div>
