@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { DropdownContainer } from "../components/dashboard/DropdownContainer";
-import Header from "../components/dashboard/Header";
+import Header from "../components/layout/Header";
 import { InfoSection } from "../components/dashboard/InfoSection";
 import { fetchCekPanganData, MONTH_NAMES_ID, type AppData } from "../lib/data";
 
@@ -92,11 +92,7 @@ export const Dashboard = () => {
           setBulan={setBulan}
           onCekHarga={handleCekHarga}
           wilayahOptions={appData ? ["NASIONAL", ...appData.meta.provinces] : []}
-          komoditasOptions={
-            appData
-              ? appData.meta.commodities.map((item) => item.label)
-              : []
-          }
+          komoditasOptions={appData ? appData.meta.commodities.map((item) => item.label) : []}
         />
       </div>
 

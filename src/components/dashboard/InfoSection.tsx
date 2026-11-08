@@ -21,7 +21,7 @@ export const InfoSection = ({
   appData,
   selectedWilayah,
   selectedKomoditas,
-  selectedBulan,
+  selectedBulan = "",
 }: InfoSectionProps) => {
   if (isLoading || !appData) {
     return <Loading />;

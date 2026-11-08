@@ -27,7 +27,6 @@ export const DropdownContainer = ({
       <Dropdown 
         label="PILIH WILAYAH" 
         icon="akar-icons:location" 
-        // Tambahkan opsi "Nasional" jika belum ada
         options={[...wilayahOptions]} 
         value={wilayah} 
         onChange={setWilayah} 
@@ -48,7 +47,10 @@ export const DropdownContainer = ({
           onChange={setBulan} 
         />
       </div>
-      <PrimaryButton onClick={onCekHarga} />
+      <PrimaryButton 
+        onClick={onCekHarga} 
+        label="Cek Harga"
+      />
 
       <p className="text-xs pt-4 text-brand-gray text-center lg:text-base">
         Data yang ditampilkan merupakan data yang diambil pada periode  Januari 2021 - Januari 2026
