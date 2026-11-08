@@ -23,3 +23,6 @@ Buka http://localhost:3000
 ## Progress Saat Ini
 Selesai: landing page, Dashboard Cek Harga.
 Dalam pengerjaan: Peringkat Provinsi, Panduan.
+
+## Untuk Membuka Landing Page
+tambahkan /landing/index.html 
