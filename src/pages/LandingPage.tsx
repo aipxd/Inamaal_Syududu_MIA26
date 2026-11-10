@@ -393,14 +393,14 @@ export const LandingPage: React.FC = () => {
                       axisLine={false}
                       tickLine={false}
                       tick={{ fill: "#94A3B8", fontSize: 10 }}
-                      tickFormatter={(val) => `${Math.round(val / 1000)}k`}
+                      tickFormatter={(val: any) => `${Math.round(val / 1000)}k`}
                     />
                     <Tooltip
                       formatter={(val: any) => [
                         val ? `Rp${val.toLocaleString("id-ID")}/kg` : "",
                         "Harga Telur"
                       ]}
-                      labelFormatter={(label) => `Tahun ${label}`}
+                      labelFormatter={(label: any) => `Tahun ${label}`}
                       contentStyle={{
                         borderRadius: "10px",
                         border: "1px solid #E2E8F0",
@@ -415,7 +415,7 @@ export const LandingPage: React.FC = () => {
                       stroke="#22C55E"
                       strokeWidth={3}
                       fill="url(#curveGradient)"
-                      dot={(props) => {
+                      dot={(props: any) => {
                         const { cx, cy, payload } = props;
                         const isRed = payload.isPeak || payload.year === "2024";
                         return (

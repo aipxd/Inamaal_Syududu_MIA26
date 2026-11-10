@@ -32,7 +32,7 @@ export const BottomNav = () => {
           <NavLink
             key={item.path}
             to={item.path}
-            className={({ isActive }) =>
+            className={({ isActive }: { isActive: boolean }) =>
               `flex flex-col items-center justify-center gap-0.5 px-3 py-1.5 rounded-full transition-all duration-200 select-none
               lg:flex-row lg:gap-2 lg:px-5 lg:py-2 ${
                 isActive
