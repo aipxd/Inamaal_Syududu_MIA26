@@ -168,9 +168,9 @@ export const InfoSection = ({
     pricesForSelectedMonth.length > 0 ? Math.max(...pricesForSelectedMonth) : 0;
 
   return (
-    <div className="mx-auto bg-brand-bg rounded-t-2xl p-4 min-h-screen flex flex-col justify-center items-center gap-5 pt-10 pb-25 lg:gap-10 lg:rounded-4xl">
+    <div className="mx-auto bg-brand-bg rounded-t-2xl p-4 min-h-screen flex flex-col justify-center items-center gap-5 pt-10 pb-25 lg:gap-7 lg:rounded-4xl">
       
-      <div className="w-full flex flex-col lg:flex-row lg:flex-wrap lg:px-35 lg:gap-10 gap-5 justify-center max-w-[2000px]">
+      <div className="w-full flex flex-col lg:flex-row lg:flex-wrap lg:px-35 lg:gap-7 gap-5 justify-center max-w-[2000px]">
         {/* Kartu Rata-Rata Harga */}
         <CardRata2Harga
           bulan={selectedBulan}
@@ -211,8 +211,9 @@ export const InfoSection = ({
       </div>
 
       {/* Grafik Pola Harga 12 Bulan */}
-      <PolaHargaChart 
-      data={chartData} />
+      <div className="w-full flex flex-col lg:flex-row lg:flex-wrap lg:px-35 lg:gap-10 gap-5 justify-center max-w-[2000px]">
+        <PolaHargaChart data={chartData} />
+      </div>
       <InfoSumber />
     </div>
   );

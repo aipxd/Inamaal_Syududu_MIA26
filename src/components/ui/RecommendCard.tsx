@@ -52,10 +52,10 @@ export const RecommendCard = ({
       <div className="relative">
         <div className="flex justify-center">
             <div>
-                <span className="bg-white text-brand-primary px-4 py-1 rounded-2xl text-xs font-semibold lg:text-lg">
+                <span className="bg-white text-brand-primary px-4 py-1 rounded-2xl text-xs font-semibold lg:text-base">
                   Rekomendasi Waktu Belanja
                 </span>
-                <h2 className="text-xl font-bold mt-3 text-shadow-lg/10 lg:text-4xl">
+                <h2 className="text-xl font-bold mt-3 text-shadow-lg/10 lg:text-3xl">
                     {komoditas} biasanya 
                     <span className="underline text-[#b3ff00]"> paling murah </span> 
                     di bulan {bulanTermurah}

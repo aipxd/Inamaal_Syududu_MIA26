@@ -45,7 +45,7 @@ export default function PolaHargaChart({ data = [] }: PolaHargaChartProps) {
   const minMonth = chartData.find((d) => d.price === minVal && minVal > 0)?.month;
 
   return (
-    <div className="bg-white p-4 lg:p-6 rounded-2xl shadow-lg border border-black/15 w-full max-w-[2000px] lg:max-w-[1600px]">
+    <div className="bg-white p-4 lg:p-6 rounded-2xl shadow-lg border border-black/15 w-full max-w-[2000px]">
       {/* Header Judul */}
       <div className="flex items-center gap-2 mb-3">
         <div className="h-4 w-2 bg-[#41B573] rounded-xl"></div>

@@ -3,31 +3,32 @@ import { DropdownContainer } from "../components/dashboard/DropdownContainer";
 import Header from "../components/layout/Header";
 import { InfoSection } from "../components/dashboard/InfoSection";
 import { fetchCekPanganData, MONTH_NAMES_ID, type AppData } from "../lib/data";
+import { PageLoader } from "../components/ui/PageLoader";
 
 export const Dashboard = () => {
   const [appData, setAppData] = useState<AppData | null>(null);
 
-  // 1. State Draft (dioper ke Dropdown, berubah langsung saat diklik tapi belum mengubah UI bawah)
+  // 1. State Draft
   const [wilayah, setWilayah] = useState("");
   const [komoditas, setKomoditas] = useState("");
   const [bulan, setBulan] = useState("Januari");
 
-  // 2. State Terapan (dioper ke InfoSection, HANYA berubah saat tombol "Cek Harga" diklik)
+  // 2. State Terapan
   const [appliedWilayah, setAppliedWilayah] = useState("");
   const [appliedKomoditas, setAppliedKomoditas] = useState("");
   const [appliedBulan, setAppliedBulan] = useState("Januari");
 
   const [showData, setShowData] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+
+  const [isInitialLoading, setIsInitialLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);             
 
   useEffect(() => {
     const loadInitialData = async () => {
       try {
-        setIsLoading(true);
         const data = await fetchCekPanganData();
         setAppData(data);
 
-        // const daftarProvinsi = data.meta.provinces || [];
         const daftarKomoditas = data.meta.commodities
           ? data.meta.commodities.map((item) =>
               typeof item === "object" && item !== null && "label" in item ? item.label : typeof item === "string" ? item : ""
@@ -45,7 +46,6 @@ export const Dashboard = () => {
           }
         }
 
-        // Set nilai default awal ke kedua kelompok state
         setWilayah(initialWilayah);
         setKomoditas(initialKomoditas);
         setBulan(initialBulan);
@@ -58,7 +58,10 @@ export const Dashboard = () => {
       } catch (error) {
         console.log("Gagal memuat data: ", error);
       } finally {
-        setIsLoading(false);
+        // Full Page Loader HANYA berjalan 1 detik di awal saat pertama kali halaman dimuat
+        setTimeout(() => {
+          setIsInitialLoading(false);
+        }, 800);
       }
     };
 
@@ -68,7 +71,6 @@ export const Dashboard = () => {
   const handleCekHarga = () => {
     setIsLoading(true);
 
-    // Terapkan nilai dropdown terbaru ke InfoSection HANYA saat tombol diklik
     setAppliedWilayah(wilayah);
     setAppliedKomoditas(komoditas);
     setAppliedBulan(bulan);
@@ -77,6 +79,10 @@ export const Dashboard = () => {
       setIsLoading(false);
     }, 700);
   };
+
+  if (isInitialLoading) {
+    return <PageLoader />;
+  }
 
   return (
     <section>

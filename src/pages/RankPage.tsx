@@ -4,6 +4,8 @@ import { DropdownRank } from "../components/rankPage/DropdownRank";
 import { fetchCekPanganData, type AppData } from "../lib/data";
 import { OutputRank } from "../components/rankPage/OutputRank";
 import type { RankItem } from "../components/ui/RankList";
+import Loader from "../components/ui/Loader-4";
+import { RankSkeleton } from "../components/ui/RankSkeleton";
 
 export const RankPage = () => {
   const [appData, setAppData] = useState<AppData | null>(null);
@@ -16,22 +18,22 @@ export const RankPage = () => {
   const [appliedWilayah, setAppliedWilayah] = useState<string>("");
   const [appliedKomoditas, setAppliedKomoditas] = useState<string>("");
 
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  // 🔴 2 State Loading Terpisah
+  const [isInitialLoading, setIsInitialLoading] = useState<boolean>(true); // Full-screen loader saat pertama masuk
+  const [isCekLoading, setIsCekLoading] = useState<boolean>(false);        // Skeleton loader saat klik Cek Harga
 
   useEffect(() => {
     const loadInitialData = async () => {
       try {
-        setIsLoading(true);
+        setIsInitialLoading(true);
         const data = await fetchCekPanganData();
         setAppData(data);
 
-        // 1. Ambil array provinsi (string[])
         const rawProvinces: any[] = data.meta.provinces || [];
         const daftarProvinsi: string[] = rawProvinces.map((p) =>
           typeof p === "object" && p !== null && "label" in p ? p.label : String(p)
         );
 
-        // 2. Ambil array komoditas dan ekstrak .label nya agar menjadi string[]
         const rawCommodities: any[] = (data.meta.commodities as any) || [];
         const daftarKomoditas: string[] = Array.isArray(rawCommodities)
           ? rawCommodities.map((c) =>
@@ -42,7 +44,6 @@ export const RankPage = () => {
         const initialWilayah = daftarProvinsi.length > 0 ? daftarProvinsi[0] : "ACEH";
         const initialKomoditas = daftarKomoditas.length > 0 ? daftarKomoditas[0] : "";
 
-        // Inisialisasi State
         setWilayah(initialWilayah);
         setKomoditas(initialKomoditas);
 
@@ -51,7 +52,9 @@ export const RankPage = () => {
       } catch (error) {
         console.error("Gagal memuat data: ", error);
       } finally {
-        setIsLoading(false);
+        setTimeout(() => {
+          setIsInitialLoading(false);
+        }, 800);
       }
     };
 
@@ -59,23 +62,21 @@ export const RankPage = () => {
   }, []);
 
   const handleCekHarga = () => {
-    setIsLoading(true);
+    setIsCekLoading(true);
 
     setAppliedWilayah(wilayah);
     setAppliedKomoditas(komoditas);
 
     setTimeout(() => {
-      setIsLoading(false);
-    }, 400);
+      setIsCekLoading(false);
+    }, 700);
   };
 
-  // Helper untuk mengekstraksi & mengurutkan data dari Termurah ke Termahal
   const getSortedRankData = (): RankItem[] => {
     if (!appData || !appliedKomoditas) return [];
 
     const rawCommodities: any[] = (appData.meta.commodities as any) || [];
     
-    // Cari objek komoditas yang cocok dengan label yang dipilih
     let commodityKey = appliedKomoditas;
     let commodityId = appliedKomoditas;
 
@@ -89,7 +90,6 @@ export const RankPage = () => {
       }
     }
 
-    // Ambil data harga dari appData.latest berdasarkan id atau label
     const latestPricesObj =
       appData.latest?.[commodityId] ||
       appData.latest?.[commodityKey] ||
@@ -104,13 +104,11 @@ export const RankPage = () => {
       })
     );
 
-    // Urutkan dari harga TERMURAH ke TERMAHAL
     return list.sort((a, b) => a.harga - b.harga);
   };
 
   const rankData = getSortedRankData();
 
-  // Ekstrak opsi komoditas sebagai string[] murni untuk Dropdown
   const getKomoditasOptions = (): string[] => {
     if (!appData) return [];
     const raw: any = appData.meta.commodities;
@@ -120,7 +118,6 @@ export const RankPage = () => {
     return Object.values(raw);
   };
 
-  // Ekstrak opsi wilayah sebagai string[] murni untuk Dropdown
   const getWilayahOptions = (): string[] => {
     if (!appData) return [];
     const raw: any = appData.meta.provinces;
@@ -130,10 +127,18 @@ export const RankPage = () => {
     return Object.values(raw);
   };
 
+  if (isInitialLoading) {
+    return (
+      <div className="min-h-screen bg-white flex items-center justify-center">
+        <Loader />
+      </div>
+    );
+  }
+
   return (
-    <section className="min-h-screen bg-slate-50 pb-20">
+    <section className="min-h-screen">
       <Header />
-      <div className="bg-white flex flex-col justify-center items-center gap-5 p-4 max-w-4xl mx-auto">
+      <div className="bg-white flex flex-col justify-center items-center gap-5 p-4 lg:px-20 lg:pt-15 rounded-xl max-w-5xl mx-auto shadow-2xl">
         <DropdownRank
           wilayah={wilayah}
           setWilayah={setWilayah}
@@ -144,12 +149,14 @@ export const RankPage = () => {
           komoditasOptions={getKomoditasOptions()}
         />
 
-        {isLoading ? (
-          <div className="py-8 text-brand-gray text-sm font-semibold animate-pulse">
-            Memuat data peringkat...
-          </div>
+        {isCekLoading ? (
+          <RankSkeleton />
         ) : (
-          <OutputRank rankData={rankData} selectedWilayah={appliedWilayah} />
+          <OutputRank 
+            rankData={rankData} 
+            selectedWilayah={appliedWilayah} 
+            selectedKomoditas={appliedKomoditas}
+          />
         )}
       </div>
     </section>

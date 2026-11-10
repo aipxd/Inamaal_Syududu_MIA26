@@ -17,7 +17,7 @@ export const BottomNav = () => {
   return (
     <nav
       className="
-        fixed bottom-4 left-1/2 -translate-x-1/2 w-[90%] max-w-md z-50
+        fixed bottom-4 left-1/2 -translate-x-1/2 w-[95%] max-w-lg z-50
         lg:bottom-auto lg:top-4 lg:max-w-2xl
       "
     >

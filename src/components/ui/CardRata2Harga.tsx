@@ -18,7 +18,7 @@ export const CardRata2Harga = ({
     const isTurun = status === "Turun";
 
   return (
-    <div className="bg-white p-5 rounded-2xl shadow-lg border border-black/15 flex- lg:p-10">
+    <div className="bg-white p-5 rounded-2xl shadow-lg border border-black/15 flex- lg:p-10 lg:max-w-110">
         <div className="text-sm flex justify-between items-center">
             <h3 className="font-medium text-brand-gray lg:text-lg">Harga rata-rata bulan {bulan}</h3>
             
@@ -49,7 +49,7 @@ export const CardRata2Harga = ({
         
         {/* Tampilan harga & satuan dinamis */}
         <div className="flex items-end justify-start gap-2 my-3">
-            <p className="font-semibold text-3xl lg:text-5xl">{harga}</p> 
+            <p className="font-semibold text-3xl lg:text-4xl">{harga}</p> 
             <p className="text-brand-gray lg:text-xl">{satuan}</p>
         </div>
 
