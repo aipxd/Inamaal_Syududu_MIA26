@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import pangiImg from "../assets/pangi.webp";
 import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 import {
@@ -206,7 +207,7 @@ export const LandingPage: React.FC = () => {
         {/* Maskot Pangi Watermark Background */}
         <div className="absolute -right-3 top-3 w-64 h-64 opacity-35 pointer-events-none z-1">
           <img
-            src="./src/assets/pangi.webp"
+            src={pangiImg}
             alt="pangi"
             className="w-full h-full object-contain filter drop-shadow-md"
           />
