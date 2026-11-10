@@ -13,7 +13,7 @@ export const RankSkeleton = () => {
 
       {/* Skeleton 5 Baris Item List */}
       <div className="space-y-3">
-        {[...Array(5)].map((_, i) => (
+        {[...Array(10)].map((_, i) => (
           <div key={i} className="w-full h-14 bg-slate-100 animate-pulse rounded-lg" />
         ))}
       </div>
