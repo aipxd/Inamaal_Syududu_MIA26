@@ -1,4 +1,5 @@
 import React from "react";
+import pangiImg from "../../assets/pangi.webp";
 import { Icon } from "@iconify/react";
 
 export const GuideBanner: React.FC = () => {
@@ -26,7 +27,7 @@ export const GuideBanner: React.FC = () => {
       <div className="flex flex-col items-center justify-center shrink-0">
         <div className="w-18 h-18 md:w-20 md:h-20 bg-emerald-50 rounded-2xl border border-emerald-200/60 p-1.5 flex items-center justify-center shadow-inner">
           <img
-            src="src/assets/pangi.webp"
+            src={pangiImg}
             alt="Maskot Pangi"
             className="w-full h-full object-contain drop-shadow"
           />
