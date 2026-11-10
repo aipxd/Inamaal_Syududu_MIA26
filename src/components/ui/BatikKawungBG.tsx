@@ -1,4 +1,4 @@
-// Komponen Pattern Batik Kawung Vektor Vektor
+
 export const BatikKawungBG = () => (
   <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden opacity-10">
     <svg className="w-full h-full">

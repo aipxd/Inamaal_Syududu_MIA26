@@ -8,16 +8,18 @@ interface HeaderProps {
 const Header = ({ onOpenGuide: _onOpenGuide }: HeaderProps) => {
   return (
     <header className="flex justify-between px-5 py-3">
-      <div>
-        <div className="flex gap-1 items-center">
-          <h1 className="text-xl font-bold text-white lg:text-3xl">
-            Cek
-            <span className="text-brand-yellow">Pangan</span>
-          </h1>
-          <Icon icon="codicon:verified" className="text-2xl text-white lg:text-4xl" />
+      <Link to="/" aria-label="CekPangan Beranda">
+        <div>
+          <div className="flex gap-1 items-center">
+            <h1 className="text-xl font-bold text-white lg:text-3xl">
+              Cek
+              <span className="text-brand-yellow">Pangan</span>
+            </h1>
+            <Icon icon="codicon:verified" className="text-2xl text-white lg:text-4xl" />
+          </div>
+          <p className="text-xs text-white mt-1 lg:text-sm">Sumber: Data resmi Bapanas</p>
         </div>
-        <p className="text-xs text-white mt-1 lg:text-sm">Sumber: Data resmi Bapanas</p>
-      </div>
+      </Link>
 
       <div className="flex items-center">
         <div className="relative group flex items-center">

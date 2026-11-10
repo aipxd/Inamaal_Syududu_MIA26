@@ -8,7 +8,7 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { path: "/", label: "Cek Harga", icon: "bi:cash-stack" },
+  { path: "/dashboard", label: "Cek Harga", icon: "bi:cash-stack" },
   { path: "/rank", label: "Peringkat Provinsi", icon: "akar-icons:map" },
   { path: "/guide", label: "Panduan", icon: "carbon:book" },
 ];
