@@ -10,7 +10,6 @@ import {
   ResponsiveContainer
 } from "recharts";
 import { InfoSumber } from "../components/ui/InfoSumber";
-import { BatikKawungBG } from "../components/ui/BatikKawungBG";
 
 interface DataPoint {
   year: string;
@@ -51,9 +50,6 @@ export const LandingPage: React.FC = () => {
         const avg2021 = yearlyMap["2021"]
           ? Math.round(yearlyMap["2021"].reduce((a, b) => a + b, 0) / yearlyMap["2021"].length)
           : 24806;
-        const avg2022 = yearlyMap["2022"]
-          ? Math.round(yearlyMap["2022"].reduce((a, b) => a + b, 0) / yearlyMap["2022"].length)
-          : 27433;
         const avg2023 = yearlyMap["2023"]
           ? Math.round(yearlyMap["2023"].reduce((a, b) => a + b, 0) / yearlyMap["2023"].length)
           : 29000;
@@ -400,7 +396,7 @@ export const LandingPage: React.FC = () => {
                       tickFormatter={(val) => `${Math.round(val / 1000)}k`}
                     />
                     <Tooltip
-                      formatter={(val: number | undefined) => [
+                      formatter={(val: any) => [
                         val ? `Rp${val.toLocaleString("id-ID")}/kg` : "",
                         "Harga Telur"
                       ]}
