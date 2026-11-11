@@ -36,7 +36,7 @@ export const GLOSSARY_ITEMS: GlossaryItem[] = [
     iconBg: "bg-emerald-50",
     iconColor: "text-emerald-600",
     description:
-      "Nilai rata-rata tertimbang harga komoditas pangan dari seluruh pasar pantauan di 38 provinsi Indonesia yang diperbarui setiap hari oleh enumerator lapangan (catatan: CekPangan hanya menampilkan data berdasarkan laporan terdahulu, bukan terbaru).",
+      "Nilai rata-rata tertimbang harga komoditas pangan dari seluruh pasar pantauan di 38 provinsi Indonesia yang diperbarui setiap hari oleh petugas lapangan (catatan: CekPangan hanya menampilkan data berdasarkan laporan terdahulu, bukan terbaru).",
     noteLabel: "Fungsinya:",
     noteText:
       "Menjadi patokan umum konsumen untuk melihat apakah harga di pasar daerah setempat wajar atau di atas rata-rata.",
