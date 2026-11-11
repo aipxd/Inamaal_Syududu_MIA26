@@ -1,6 +1,7 @@
 import { InfoSumber } from "../ui/InfoSumber";
 import { RankList, type RankItem } from "../ui/RankList";
 import { SelectedProvince } from "../ui/SelectedProvince";
+import { ScrollToTopButton } from "../ui/ScrollToTopButton";
 
 interface OutputRankProps {
   rankData: RankItem[];
@@ -19,7 +20,7 @@ export const OutputRank = ({ rankData, selectedWilayah, selectedKomoditas }: Out
   const satuan = selectedKomoditas?.toLowerCase().includes("minyak goreng kemasan") ? "liter" : "kg"
 
   return (
-    <section className="w-full space-y-4 pb-20">
+    <section className="w-full space-y-4 pb-30">
       <SelectedProvince
         provinsi={selectedItem ? selectedItem.provinsi : selectedWilayah}
         harga={selectedItem ? selectedItem.harga : 0}
@@ -34,6 +35,7 @@ export const OutputRank = ({ rankData, selectedWilayah, selectedKomoditas }: Out
       <div className="max-w-80 mx-auto flex justify-center mt-10">
         <InfoSumber />
       </div>
+      <ScrollToTopButton />
     </section>
   );
 };
