@@ -134,7 +134,7 @@ export const GuideGlossaryCard: React.FC<GuideGlossaryCardProps> = ({ item }) =>
         </div>
 
         <span
-          className={`text-[10px] md:text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap border ${item.badgeColor.bg} ${item.badgeColor.text} ${item.badgeColor.border}`}
+          className={`text-tiny md:text-xs font-semibold px-2.5 py-1 rounded-full whitespace-nowrap border ${item.badgeColor.bg} ${item.badgeColor.text} ${item.badgeColor.border}`}
         >
           {item.badge}
         </span>

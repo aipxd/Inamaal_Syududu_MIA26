@@ -114,8 +114,8 @@ export const LandingPage: React.FC = () => {
       {/* ========================================================================
           1. NAVIGATION HEADER (Green Navbar)
           ======================================================================== */}
-      <header className="bg-linear-to-r from-[#41B673] to-[#68CC4F] text-white pt-4 pb-2 relative sticky top-0 z-40">
-        <div className="w-full max-w-[860px] mx-auto px-5 flex items-center justify-between">
+      <header className="bg-linear-to-r from-brand-primary to-brand-secondary text-white pt-4 pb-2 sticky top-0 z-40">
+        <div className="w-full max-w-215 mx-auto px-5 flex items-center justify-between">
           {/* Brand Logo & Official Badge */}
           <Link to="/" className="" aria-label="CekPangan Beranda">
             <div>
@@ -172,7 +172,7 @@ export const LandingPage: React.FC = () => {
 
         {/* Mobile Nav Menu Dropdown */}
         {mobileMenuOpen && (
-          <div className="md:hidden absolute top-full left-0 right-0 z-50 pt-3 pb-4 px-5 border-t border-white/20 flex flex-col items-center gap-3 shadow-lg bg-linear-to-r from-[#41B673] to-[#68CC4F] animate-fadeIn">
+          <div className="md:hidden absolute top-full left-0 right-0 z-50 pt-3 pb-4 px-5 border-t border-white/20 flex flex-col items-center gap-3 shadow-lg bg-linear-to-r from-[#41B673] to-brand-secondary animate-fadeIn">
             <a
               href="#hero"
               className="relative w-full text-center cursor-pointer text-white font-bold text-sm hover:text-[#FDE047] transition-colors py-1 after:content-[''] after:absolute after:inset-x-0 after:-inset-y-3"
@@ -203,7 +203,7 @@ export const LandingPage: React.FC = () => {
       {/* ========================================================================
           2. HERO SECTION
           ======================================================================== */}
-      <section className="bg-linear-to-r from-[#41B673] to-[#68CC4F] text-white pt-6 pb-6 relative overflow-hidden" id="hero">
+      <section className="bg-linear-to-r from-[#41B673] to-brand-secondary text-white pt-6 pb-6 relative overflow-hidden" id="hero">
         {/* Maskot Pangi Watermark Background */}
         <div className="absolute -right-3 top-3 w-64 h-64 opacity-35 pointer-events-none z-1">
           <img
@@ -213,19 +213,19 @@ export const LandingPage: React.FC = () => {
           />
         </div>
 
-        <div className="w-full max-w-[860px] mx-auto px-5 relative z-2">
-          <div className="max-w-[580px]">
+        <div className="w-full max-w-215 mx-auto px-5 relative z-2">
+          <div className="max-w-145">
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight leading-tight mb-3">
               Kapan Sebaiknya Beli Bahan Pangan?
             </h1>
-            <p className="text-sm md:text-base text-white/95 leading-relaxed mb-6 max-w-[440px]">
+            <p className="text-sm md:text-base text-white/95 leading-relaxed mb-6 max-w-110">
               Pantau pola harga pangan dengan mudah dan rencanakan belanjamu dengan pintar.
             </p>
 
             {/* Tombol CTA Kuning */}
             <Link
               to="/dashboard"
-              className="inline-flex items-center justify-center gap-2.5 bg-[#F6C928] hover:bg-[#EAB308] text-gray-900 font-bold text-sm md:text-base py-3.5 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 w-full max-w-[360px] group"
+              className="inline-flex items-center justify-center gap-2.5 bg-[#F6C928] hover:bg-[#EAB308] text-gray-900 font-bold text-sm md:text-base py-3.5 px-6 rounded-full shadow-lg hover:shadow-xl transition-all duration-200 transform hover:-translate-y-0.5 w-full max-w-90 group"
             >
               <Icon icon="lucide:calendar-days" className="text-lg" />
               <span>Cek Rata-rata Harga Bulan ini</span>
@@ -236,7 +236,7 @@ export const LandingPage: React.FC = () => {
       </section>
 
       {/* Gelombang Halus / Wave SVG Divider */}
-      <div className="w-full bg-linear-to-r from-[#41B673] to-[#68CC4F] overflow-hidden leading-none -mb-px">
+      <div className="w-full bg-linear-to-r from-[#41B673] to-brand-secondary overflow-hidden leading-none -mb-px">
         <svg
           viewBox="0 0 1440 60"
           preserveAspectRatio="none"
@@ -250,7 +250,7 @@ export const LandingPage: React.FC = () => {
           3. WHITE MAIN CONTENT
           ======================================================================== */}
       <main className="bg-white pt-4 pb-12">
-        <div className="w-full max-w-[860px] mx-auto px-5">
+        <div className="w-full max-w-215 mx-auto px-5">
           {/* Banner: Pola Musiman Dapur */}
           <section className="bg-white border border-emerald-100 rounded-2xl p-4 md:p-5 mb-6 shadow-sm hover:shadow-md transition-shadow flex items-center gap-3.5">
             <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
@@ -261,7 +261,7 @@ export const LandingPage: React.FC = () => {
                 <span className="text-[11px] font-bold uppercase tracking-wider text-[#41B673]">
                   POLA MUSIMAN DAPUR
                 </span>
-                <span className="bg-slate-100 text-gray-600 text-[10px] font-semibold px-2 py-0.5 rounded-full">
+                <span className="bg-slate-100 text-gray-600 text-tiny font-semibold px-2 py-0.5 rounded-full">
                   Tips
                 </span>
               </div>
@@ -324,7 +324,7 @@ export const LandingPage: React.FC = () => {
               </article>
 
               {/* Card 3: Minyak Goreng */}
-              <article className="bg-linear-to-r from-[#EF4444] to-[#F97316] text-white p-3.5 md:p-4 rounded-2xl shadow-sm hover:shadow-md transition-all flex items-center justify-between gap-3">
+              <article className="bg-linear-to-r from-brand-negative to-[#F97316] text-white p-3.5 md:p-4 rounded-2xl shadow-sm hover:shadow-md transition-all flex items-center justify-between gap-3">
                 <div className="flex items-center gap-3">
                   <div className="w-11 h-11 rounded-full bg-white flex items-center justify-center shadow-xs shrink-0">
                     <Icon icon="iconito:olive-oil" className="text-2xl" />
@@ -516,8 +516,8 @@ export const LandingPage: React.FC = () => {
       {/* ========================================================================
           6. SITE FOOTER
           ======================================================================== */}
-      <footer className="bg-linear-to-r from-[#41B673] to-[#68CC4F] text-white pt-7 pb-9">
-        <div className="w-full max-w-[860px] mx-auto px-5">
+      <footer className="bg-linear-to-r from-[#41B673] to-brand-secondary text-white pt-7 pb-9">
+        <div className="w-full max-w-215 mx-auto px-5">
           <div className="text-2xl font-bold tracking-tight text-white mb-3">
             Cek<span className="text-[#FDE047]">Pangan</span>
           </div>

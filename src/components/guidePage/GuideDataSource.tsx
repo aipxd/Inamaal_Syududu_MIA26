@@ -42,7 +42,7 @@ export const GuideDataSource: React.FC = () => {
             <h3 className="text-sm md:text-base font-bold text-gray-800">
               Data.go.id
             </h3>
-            <span className="text-[10px] md:text-xs font-semibold px-2 py-0.5 rounded-md bg-blue-50 text-blue-700 border border-blue-200">
+            <span className="text-tiny md:text-xs font-semibold px-2 py-0.5 rounded-md bg-blue-50 text-blue-700 border border-blue-200">
               Penyalur Data Bapanas
             </span>
           </div>
@@ -58,7 +58,7 @@ export const GuideDataSource: React.FC = () => {
           href="https://panelharga.badanpangan.go.id/"
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full bg-[#FAD24A] hover:bg-[#F6C928] text-gray-900 font-bold text-sm md:text-base py-3 px-4 rounded-full shadow-md flex items-center justify-center gap-2 transition-all duration-200 hover:scale-[1.01] active:scale-[0.99]"
+          className="w-full bg-brand-yellow hover:bg-[#F6C928] text-gray-900 font-bold text-sm md:text-base py-3 px-4 rounded-full shadow-md flex items-center justify-center gap-2 transition-all duration-200 hover:scale-[1.01] active:scale-[0.99]"
         >
           <span>Cek Harga Hari Ini (Bapanas Resmi)</span>
           <Icon icon="lucide:external-link" className="text-lg" />

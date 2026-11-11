@@ -1,6 +1,5 @@
 import React from "react";
 import pangiImg from "../../assets/pangi.webp";
-import { Icon } from "@iconify/react";
 
 export const GuideBanner: React.FC = () => {
   return (
