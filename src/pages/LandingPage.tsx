@@ -235,16 +235,16 @@ export const LandingPage: React.FC = () => {
         </div>
       </section>
 
-      {/* Gelombang Halus / Wave SVG Divider */}
-      <div className="w-full bg-linear-to-r from-[#41B673] to-brand-secondary overflow-hidden leading-none -mb-px">
-        <svg
-          viewBox="0 0 1440 60"
-          preserveAspectRatio="none"
-          className="w-full h-8 md:h-12 block fill-white"
-        >
-          <path d="M0,0 C320,55 580,60 760,35 C940,10 1200,45 1440,20 L1440,60 L0,60 Z"></path>
-        </svg>
-      </div>
+{/* Gelombang Halus / Wave SVG Divider */}
+<div className="w-full bg-linear-to-r from-[#41B673] to-brand-secondary overflow-hidden leading-none -mb-px">
+  <svg
+    viewBox="0 0 1440 120"
+    preserveAspectRatio="none"
+    className="w-full h-14 md:h-28 block fill-white"
+  >
+    <path d="M0,40 C360,120 720,120 1000,70 C1140,45 1280,10 1440,45 L1440,120 L0,120 Z"></path>
+  </svg>
+</div>
 
       {/* ========================================================================
           3. WHITE MAIN CONTENT
