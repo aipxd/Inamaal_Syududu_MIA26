@@ -1,15 +1,15 @@
 import React from "react";
 import Header from "../components/layout/Header";
-import { GuideBanner } from "../components/ui/GuideBanner";
-import { GuideGlossaryCard, GLOSSARY_ITEMS } from "../components/ui/GuideGlossaryCard";
-import { GuideDataSource } from "../components/ui/GuideDataSource";
+import { GuideBanner } from "../components/guidePage/GuideBanner";
+import { GuideGlossaryCard, GLOSSARY_ITEMS } from "../components/guidePage/GuideGlossaryCard";
+import { GuideDataSource } from "../components/guidePage/GuideDataSource";
 import { Icon } from "@iconify/react";
 
 export const GuidePage: React.FC = () => {
   return (
-    <section className="min-h-screen pt-2">
+    <section className="min-h-screen">
       <Header />
-      <div className="w-full p-4 px-20 pb-40 mt-2 space-y-5 lg:max-w-2xl bg-brand-bg min-w-full">
+      <div className="w-full lg:p-7 lg:px-20 py-5 pb-30 px-5 lg:pb-20 space-y-5 lg:max-w-2xl bg-brand-bg min-w-full">
         <GuideBanner />
 
         {/* Section: Kamus Istilah Pangan */}
@@ -33,7 +33,6 @@ export const GuidePage: React.FC = () => {
             ))}
           </div>
         </div>
-
         {/* Section: Transparansi Sumber Data Resmi */}
         <GuideDataSource />
       </div>

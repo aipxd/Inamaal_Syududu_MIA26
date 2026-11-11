@@ -43,7 +43,7 @@ export const DropdownRank = ({
       />
 
       <p className="text-xs pt-4 text-brand-gray text-center lg:text-base">
-        Data yang ditampilkan merupakan data yang diambil pada periode  Januari 2021 - Januari 2026
+        Peringkat mencakup 37 provinsi. Papua Pegunungan belum ada data harga untuk Januari 2026.
       </p>
     </div>
   );

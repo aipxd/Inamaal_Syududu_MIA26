@@ -449,7 +449,7 @@ export const LandingPage: React.FC = () => {
           {/* ====================================================================
               5. MENGAPA CEKPANGAN?
               ==================================================================== */}
-          <section id="tentang" className="mb-7" aria-label="Mengapa CekPangan">
+          <section id="tentang" aria-label="Mengapa CekPangan">
             <div className="flex items-center gap-2.5 mb-4">
               <span className="w-1.5 h-4.5 bg-[#41B673] rounded-full inline-block"></span>
               <h2 className="text-base md:text-lg font-bold text-gray-900 tracking-tight">
@@ -524,7 +524,7 @@ export const LandingPage: React.FC = () => {
 
           <p className="text-xs text-white/90 leading-relaxed mb-5">
             Catatan data: rata-rata harga bulanan Bapanas, Januari 2021 sampai Januari 2026. Bukan harga hari ini dan bukan real-time. Pola "biasanya murah atau mahal" hanya kecenderungan berdasarkan data yang ada, bukan ramalan.{" "}
-            <a href="https://data.badanpangan.go.id/" className="underline font-bold hover:text-[#FDE047]">
+            <a href="https://panelharga.badanpangan.go.id/" className="underline font-bold hover:text-[#FDE047]">
               Cek harga hari ini
             </a>
           </p>

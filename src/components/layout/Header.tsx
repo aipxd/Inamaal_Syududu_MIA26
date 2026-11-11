@@ -31,7 +31,7 @@ const Header = ({ onOpenGuide: _onOpenGuide }: HeaderProps) => {
 
           {/* Icon Link */}
           <a
-            href="https://panelharga.badanpangan.go.id/"
+            href="https://data.badanpangan.go.id/"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center"

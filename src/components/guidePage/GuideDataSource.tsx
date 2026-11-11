@@ -69,11 +69,11 @@ export const GuideDataSource: React.FC = () => {
       </div>
 
       {/* Disclaimer Platform Edukasi */}
-      <div className="bg-white/80 backdrop-blur-xs rounded-2xl p-4 border border-emerald-100/60 shadow-xs flex items-start gap-3 mt-4">
+      <div className="bg-white/80 backdrop-blur-xs rounded-2xl p-4 border border-emerald-100/60 shadow-xs flex items-start gap-3">
         <Icon icon="lucide:shield-check" className="text-emerald-700 text-lg shrink-0 mt-0.5" />
         <div className="text-xs text-gray-700 leading-relaxed">
           <p className="font-bold text-emerald-950 mb-1">
-            CekPangan beroperasi sebagai platform edukasi publik terbuka
+            CekPangan beroperasi sebagai platform publik terbuka
           </p>
           <p className="text-[11px] text-gray-600 leading-normal">
             Catatan Data: Informasi yang disajikan menggunakan data dari Badan Pangan Nasional (Bapanas) yang telah melalui proses penyesuaian dan perhitungan statistik oleh tim CekPangan. Data ini bersifat indikatif hasil olahan internal dan bukan merupakan publikasi statistik resmi Bapanas.
