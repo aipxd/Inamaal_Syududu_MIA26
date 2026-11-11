@@ -254,7 +254,7 @@ export const LandingPage: React.FC = () => {
           {/* Banner: Pola Musiman Dapur */}
           <section className="bg-white border border-emerald-100 rounded-2xl p-4 md:p-5 mb-6 shadow-sm hover:shadow-md transition-shadow flex items-center gap-3.5">
             <div className="w-12 h-12 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
-              <Icon icon="lucide:piggy-bank" className="text-2xl" />
+              <Icon icon="hugeicons:money-saving-jar" className="text-4xl" />
             </div>
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-1">

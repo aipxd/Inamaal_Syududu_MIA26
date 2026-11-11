@@ -7,9 +7,9 @@ import { Icon } from "@iconify/react";
 
 export const GuidePage: React.FC = () => {
   return (
-    <section className="min-h-screen">
+    <section className="min-h-screen ">
       <Header />
-      <div className="w-full lg:p-7 lg:px-20 py-5 pb-30 px-5 lg:pb-20 space-y-5 lg:max-w-2xl bg-brand-bg min-w-full">
+      <div className="w-full lg:p-7 lg:px-20 py-5 pb-30 px-5 lg:pb-20 space-y-5 lg:max-w-2xl bg-brand-bg min-w-full min-h-screen">
         <GuideBanner />
 
         {/* Section: Kamus Istilah Pangan */}
