@@ -7,11 +7,11 @@ export const GuideBanner: React.FC = () => {
       <div className="flex justify-start items-start w-full">
         {/* Maskot Pangi */}
         <div className="flex flex-col items-center justify-center">
-          <div className="w-10 h-10 md:w-20 md:h-20 bg-emerald-50 rounded-2xl border border-emerald-200/60 p-1.5 flex items-center justify-center shadow-inner">
+          <div className="w-15 h-15 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center">
             <img
               src={pangiImg}
               alt="Maskot Pangi"
-              className="w-full h-full object-contain drop-shadow"
+              className="w-full h-full object-contain"
             />
           </div>
           <span className="text-[11px] font-bold text-emerald-700 mt-1">Pangi</span>
