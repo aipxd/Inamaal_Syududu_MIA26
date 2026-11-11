@@ -205,7 +205,7 @@ export const LandingPage: React.FC = () => {
           ======================================================================== */}
       <section className="bg-linear-to-r from-[#41B673] to-brand-secondary text-white pt-6 pb-6 relative overflow-hidden" id="hero">
         {/* Maskot Pangi Watermark Background */}
-        <div className="absolute -right-3 top-3 w-64 h-64 opacity-35 pointer-events-none z-1">
+        <div className="absolute -right-3 top-3 w-64 h-64 lg:w-150 opacity-35 pointer-events-none z-1">
           <img
             src={pangiImg}
             alt="pangi"
