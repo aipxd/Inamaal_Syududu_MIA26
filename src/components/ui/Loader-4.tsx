@@ -1,7 +1,7 @@
 export const Loader = () => {
   return (
     <div className="flex items-center justify-center py-16 w-full">
-      <div className="grid grid-cols-3 gap-1.5 w-16 h-16">
+      <div className="grid grid-cols-3 gap-1.5 w-10 h-10">
         {[...Array(9)].map((_, i) => (
           <div
             key={i}
